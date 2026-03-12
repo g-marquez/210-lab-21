@@ -151,8 +151,8 @@ public:
         if (!current) return;
         cout << "Forward:" << endl;
         while (current) {
-            cout << current->goat.getName() << ;
-            cout << "Color: " << current->goat.getColor() << endl;
+            cout << current->goat.getName() << " (" << current->goat.getColor() 
+                 << ", " << current->goat.getAge() << ")" << endl;
             current = current->next;
         }
         cout << endl;
@@ -165,8 +165,10 @@ public:
         }
         Node* current = tail;
         if (!current) return;
+        cout << "Backward:" << endl;
         while (current) {
-            cout << current->data << " ";
+            cout << current->goat.getName() << " (" << current->goat.getColor() 
+                 << ", " << current->goat.getAge() << ")" << endl;
             current = current->prev;
         }
         cout << endl;
@@ -187,8 +189,10 @@ int main() {
     DoublyLinkedList list;
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
 
-    for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR-MIN_NR+1) + MIN_NR);
+    for (int i = 0; i < size; ++i) {
+        Goat temp;
+        list.push_back(temp);
+    }
     cout << "List forward: ";
     list.print();
 
