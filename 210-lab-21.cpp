@@ -35,6 +35,13 @@ public:
         name = n;
         color = c;
     }
+    //getters and setters
+    int getAge() const { return this->age; }
+    string getName() const { return this->name; }
+    string getColor() const { return this->color; }
+    void setAge(int a) { this->age = a; }
+    void setName(string n) { this->name = n; }
+    void setColor(string c) { this->color = c; }
 };
 
 class DoublyLinkedList {
@@ -114,7 +121,7 @@ public:
         if (!head) return; // Empty list
 
         Node* temp = head;
-        while (temp && temp->goat != g)
+        while (temp && temp->goat.getName() != g.getName())
             temp = temp->next;
 
         if (!temp) return; // Value not found
@@ -135,6 +142,10 @@ public:
     }
 
     void print() {
+        if (!head) { // Empty list
+            cout << "List is empty" << endl;
+            return;
+        } 
         Node* current = head;
         if (!current) return;
         while (current) {
@@ -145,6 +156,10 @@ public:
     }
 
     void print_reverse() {
+        if (!head) { // Empty list
+            cout << "List is empty" << endl;
+            return;
+        }
         Node* current = tail;
         if (!current) return;
         while (current) {
