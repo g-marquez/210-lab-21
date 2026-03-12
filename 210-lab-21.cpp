@@ -43,8 +43,8 @@ private:
         Goat goat;
         Node* prev;
         Node* next;
-        Node(int val, Node* p = nullptr, Node* n = nullptr) {
-            data = val; 
+        Node(Goat g = Goat(), Node* p = nullptr, Node* n = nullptr) {
+            goat = Goat(); 
             prev = p;
             next = n;
         }
