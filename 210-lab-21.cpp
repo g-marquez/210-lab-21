@@ -44,7 +44,7 @@ private:
         Node* prev;
         Node* next;
         Node(Goat g = Goat(), Node* p = nullptr, Node* n = nullptr) {
-            goat = Goat(); 
+            goat = g;
             prev = p;
             next = n;
         }
@@ -57,8 +57,8 @@ public:
     // constructor
     DoublyLinkedList() { head = nullptr; tail = nullptr; }
 
-    void push_back(int value) {
-        Node* newNode = new Node(value);
+    void push_back(Goat g) {
+        Node* newNode = new Node(g);
         if (!tail)  // if there's no tail, the list is empty
             head = tail = newNode;
         else {
@@ -68,8 +68,8 @@ public:
         }
     }
 
-    void push_front(int value) {
-        Node* newNode = new Node(value);
+    void push_front(Goat g) {
+        Node* newNode = new Node(g);
         if (!head)  // if there's no head, the list is empty
             head = tail = newNode;
         else {
@@ -79,13 +79,13 @@ public:
         }
     }
 
-    void insert_after(int value, int position) {
+    void insert_after(Goat g, int position) {
         if (position < 0) {
             cout << "Position must be >= 0." << endl;
             return;
         }
 
-        Node* newNode = new Node(value);
+        Node* newNode = new Node(g);
         if (!head) {
             head = tail = newNode;
             return;
@@ -110,11 +110,11 @@ public:
         temp->next = newNode;
     }
 
-    void delete_node(int value) {
+    void delete_node(Goat g) {
         if (!head) return; // Empty list
 
         Node* temp = head;
-        while (temp && temp->data != value)
+        while (temp && temp->goat != g)
             temp = temp->next;
 
         if (!temp) return; // Value not found
