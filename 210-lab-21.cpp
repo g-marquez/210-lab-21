@@ -144,15 +144,16 @@ public:
 
     void print() {
         if (!head) { // Empty list
-            cout << "List is empty" << endl;
+            cout << "\tList is empty" << endl;
             return;
         } 
         Node* current = head;
         if (!current) return;
         cout << "Forward:" << endl;
         while (current) {
-            cout << current->goat.getName() << " (" << current->goat.getColor() 
-                 << ", " << current->goat.getAge() << ")" << endl;
+            cout << "\t" << current->goat.getName() << " (" 
+                 << current->goat.getColor() << ", " 
+                 << current->goat.getAge() << ")" << endl;
             current = current->next;
         }
         cout << endl;
@@ -160,15 +161,16 @@ public:
 
     void print_reverse() {
         if (!head) { // Empty list
-            cout << "List is empty" << endl;
+            cout << "\tList is empty" << endl;
             return;
         }
         Node* current = tail;
         if (!current) return;
         cout << "Backward:" << endl;
         while (current) {
-            cout << current->goat.getName() << " (" << current->goat.getColor() 
-                 << ", " << current->goat.getAge() << ")" << endl;
+            cout << "\t" << current->goat.getName() << " (" 
+                 << current->goat.getColor() << ", " 
+                 << current->goat.getAge() << ")" << endl;
             current = current->prev;
         }
         cout << endl;
@@ -187,21 +189,20 @@ public:
 int main() {
     srand(time(0)); //for random numbers
     DoublyLinkedList list;
+    //to determine how many Goat objects to create (5-20)
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
 
+    //append random number of Goat objects to DoublyLinkedList
     for (int i = 0; i < size; ++i) {
         Goat temp;
         list.push_back(temp);
     }
-    cout << "List forward: ";
     list.print();
-
-    cout << "List backward: ";
     list.print_reverse();
 
     cout << "Deleting list, then trying to print.\n";
     list.~DoublyLinkedList();
-    cout << "List forward: ";
+    cout << "List forward: " << endl;
     list.print();
 
     return 0;
