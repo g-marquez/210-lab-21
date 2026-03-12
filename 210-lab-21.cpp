@@ -26,15 +26,21 @@ private:
 public:
     //constructors
     Goat() {
-        age = 
-
+        age = rand() % (MAX_AGE - MIN_AGE + 1) + MIN_AGE;
+        name = names[rand() % GOAT_NUM];
+        color = colors[rand() % GOAT_NUM];
+    }
+    Goat(int a, string n, string c) {
+        age = a;
+        name = n;
+        color = c;
     }
 };
 
 class DoublyLinkedList {
 private:
     struct Node {
-        int data;
+        Goat goat;
         Node* prev;
         Node* next;
         Node(int val, Node* p = nullptr, Node* n = nullptr) {
@@ -159,6 +165,7 @@ public:
 
 // Driver program
 int main() {
+    srand(time(0)); //for random numbers
     DoublyLinkedList list;
     int size = rand() % (MAX_LS-MIN_LS+1) + MIN_LS;
 
