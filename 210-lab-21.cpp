@@ -121,6 +121,7 @@ public:
         if (!head) return; // Empty list
 
         Node* temp = head;
+        //check if the passed Goat object's name matches the name in temp
         while (temp && temp->goat.getName() != g.getName())
             temp = temp->next;
 
@@ -148,8 +149,10 @@ public:
         } 
         Node* current = head;
         if (!current) return;
+        cout << "Forward:" << endl;
         while (current) {
-            cout << current->data << " ";
+            cout << current->goat.getName() << ;
+            cout << "Color: " << current->goat.getColor() << endl;
             current = current->next;
         }
         cout << endl;
