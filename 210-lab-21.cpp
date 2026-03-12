@@ -9,14 +9,25 @@
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
+const int GOAT_NUM = 15;
 
 class Goat {
 private:
     int age;
     string name;
     string color;
-    string names[] = {"Emily",
-    "Madison", "Brittany", "Kayla", "Samantha", "Jacob", "Michael", "Joshua", "Tyler", "Nicholas", "Austin", "Zachary", "Andrew", "Taylor", "Alexis"}
+    string names[GOAT_NUM] = {"Emily", "Madison", "Brittany", "Kayla", "Samantha",
+                     "Jacob", "Michael", "Joshua", "Tyler", "Nicholas",
+                     "Austin", "Zachary", "Andrew", "Taylor", "Alexis"};
+    string colors[GOAT_NUM] = {"White", "Black", "Brown", "Gray", "Tan",
+                     "Cream", "Spotted", "Golden", "Silver", "Chocolate",
+                     "Caramel", "Rust", "Ivory", "Charcoal", "Amber"};
+
+public:
+    //constructors
+    Goat() {
+        
+    }
 };
 
 class DoublyLinkedList {
