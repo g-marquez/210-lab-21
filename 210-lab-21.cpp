@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
+const int MIN_LS = 5, MAX_LS = 20;
 const int GOAT_NUM = 15, MIN_AGE = 1, MAX_AGE = 20;
 
 class Goat {
