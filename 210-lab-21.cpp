@@ -121,8 +121,11 @@ public:
         if (!head) return; // Empty list
 
         Node* temp = head;
-        //check if the passed Goat object's name matches the name in temp
-        while (temp && temp->goat.getName() != g.getName())
+        //check if the passed Goat object's data matches temp exactly
+        //move onto next node if not
+        while (temp && temp->goat.getName() != g.getName() &&
+               temp->goat.getAge() != g.getAge() && 
+               temp->goat.getColor() != g.getColor())
             temp = temp->next;
 
         if (!temp) return; // Value not found
